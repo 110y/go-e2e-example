@@ -9,6 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/110y/go-e2e-example/server"
 	"github.com/110y/go-e2e-example/server/pb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -35,7 +36,7 @@ func main() {
 	}
 
 	gs := grpc.NewServer()
-	pb.RegisterServerServer(gs, &server{})
+	pb.RegisterServerServer(gs, &server.Server{})
 	reflection.Register(gs)
 
 	go func() {

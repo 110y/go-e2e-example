@@ -8,7 +8,7 @@ test:
 
 .PHONY: test-server
 test-server:
-	@go test -race -count=1 ./server -covermode=atomic -coverprofile=coverage.out -run='^TestRunMain$$'
+	@go test -race -count=1 . -covermode=atomic -coverprofile=coverage.out -run='^TestRunMain$$'
 
 .PHONY: pb
 pb:
