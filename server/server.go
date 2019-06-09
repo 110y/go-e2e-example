@@ -9,5 +9,7 @@ import (
 type server struct{}
 
 func (s *server) Echo(ctx context.Context, req *pb.EchoRequest) (*pb.EchoResponse, error) {
-	return &pb.EchoResponse{Echo: req.Echo}, nil
+	return &pb.EchoResponse{
+		Echo: req.Echo,
+	}, nil
 }
