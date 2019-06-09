@@ -11,6 +11,7 @@ import (
 
 	"github.com/110y/go-e2e-example/server/pb"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 const (
@@ -35,6 +36,7 @@ func main() {
 
 	gs := grpc.NewServer()
 	pb.RegisterServerServer(gs, &server{})
+	reflection.Register(gs)
 
 	go func() {
 		if err := gs.Serve(lis); err != nil {
