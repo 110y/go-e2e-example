@@ -12,6 +12,7 @@ test-server:
 		-race \
 		-count=1 \
 		-covermode=atomic \
+		-coverpkg=.,./server \
 		-coverprofile=coverage.out \
 		-run='^TestRunMain$$'
 
